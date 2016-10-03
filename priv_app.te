@@ -112,7 +112,7 @@ neverallow priv_app domain:netlink_socket *;
 
 # Too much leaky information in debugfs. It's a security
 # best practice to ensure these files aren't readable.
-neverallow priv_app debugfs:file read;
+#neverallow priv_app debugfs:file read;
 
 # Do not allow privileged apps to register services.
 # Only trusted components of Android should be registering
