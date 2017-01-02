@@ -159,6 +159,7 @@ neverallow {
   -dumpstate
   -system_server
   userdebug_or_eng(`-perfprofd')
+  userdebug_or_eng(`-procrank')
 } self:capability sys_ptrace;
 
 # Limit device node creation to these whitelisted domains.
@@ -294,7 +295,9 @@ neverallow domain { cache_file cache_backup_file cache_private_backup_file cache
 # Protect most domains from executing arbitrary content from /data.
 neverallow {
   domain
-  -appdomain
+  -untrusted_app
+  -priv_app
+  -shell
 } {
   data_file_type
   -dalvikcache_data_file
@@ -383,6 +386,7 @@ neverallow {
   -dex2oat
   -otapreopt_slot
   -shell
+  -system_app
 } dalvikcache_data_file:file no_w_file_perms;
 
 neverallow {
@@ -613,6 +617,7 @@ neverallow {
   -shell
   -untrusted_app
   -priv_app
+  -profman
 } debugfs:file no_rw_file_perms;
 
 neverallow {
