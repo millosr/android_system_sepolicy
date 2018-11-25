@@ -743,6 +743,7 @@ neverallow {
   -cppreopts
   -dex2oat
   -otapreopt_slot
+  -system_app
 } dalvikcache_data_file:file no_w_file_perms;
 
 neverallow {

@@ -539,6 +539,7 @@ neverallow {
 neverallow {
   appdomain
   -shell # bugreport
+  -system_app
 } input_device:chr_file ~getattr;
 
 # Do not allow access to Bluetooth-related system properties except for a few whitelisted domains.
